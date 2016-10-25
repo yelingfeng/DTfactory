@@ -1,5 +1,5 @@
 <template>
-    <div class="screen">
+    <div class="df-screen">
         <el-button :plain="true" @click.native="open5">消息</el-button>
         <el-button :plain="true" @click.native="open6">成功</el-button>
         <el-button :plain="true" @click.native="open7">警告</el-button>
@@ -77,14 +77,7 @@ export default{
 </script>
 
 <style>
-.screen{
-    width:1000px;
-    height : 600px;
-    border: 1px solid #ccc;
-    margin: 10px auto ;
-    padding:5px;
-}
-
+@import "../assets/css/screen.css";
 .box-card{
     margin-top: 10px;
     width : 480px;

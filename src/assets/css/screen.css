@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@import "./common/var.css";
+
+@component-namespace df {
+
+    @b screen {
+        width:1000px;
+        height : 600px;
+        border: 1px solid #ccc;
+        margin: 10px auto ;
+        padding:5px;
+    }
+
+}

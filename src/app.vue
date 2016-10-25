@@ -18,6 +18,7 @@ export default {
 </script>
 <style>
 @reset-global pc;
+@import "./assets/css/common/var.css";
 body {
     font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
     overflow: auto;
