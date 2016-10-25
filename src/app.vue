@@ -3,7 +3,6 @@
     <hello></hello>
   </div>
 </template>
-
 <script>
 import Hello from './components/hello';
 

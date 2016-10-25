@@ -24,6 +24,7 @@
 ## 2. ESlint 代码风格
 
 具体ESlint规则查看 [eslint中文规则](http://eslint.cn/docs/rules/)
+
 具体配置 [elemefe lint规则](https://github.com/ElemeFE/eslint-config-elemefe/blob/master/rules.js)
 ```javascript
     
@@ -37,7 +38,6 @@
   
    // 大括号风格要求
   'brace-style': [2, '1tbs', { 'allowSingleLine': true }],
-  
   
   'camelcase': 0,
   
@@ -73,28 +73,36 @@
   
   'func-names': 0,
   'func-style': 0,
-  
   'generator-star-spacing': [2, { 'before': true, 'after': true }],
   'guard-for-in': 0,
   'handle-callback-err': [2, '^(err|error)$' ],
   'indent': [2, 2, { 'SwitchCase': 1 }],
+  
    // 强制在对象字面量的键和值之间使用一致的空格
   'key-spacing': [2, { 'beforeColon': false, 'afterColon': true }],
+  
   'linebreak-style': 0,
   'lines-around-comment': 0,
   'max-nested-callbacks': 0,
+  
    //  new 首字母大写
   'new-cap': [2, { 'newIsCap': true, 'capIsNew': false }],
+   //  new 调用无参构造函数时带括号 
   'new-parens': 2,
   'newline-after-var': 0,
   'no-alert': 0,
+  
+   // 禁止使用 Array 构造函数
   'no-array-constructor': 2,
+   // 禁用 caller 或 callee (no-caller)
   'no-caller': 2,
   'no-catch-shadow': 0,
+   // 禁止在条件语句中出现赋值操作符
   'no-cond-assign': 2,
   'no-console': 0,
   'no-constant-condition': 0,
   'no-continue': 0,
+   // 禁止在正则表达式中使用控制字符 
   'no-control-regex': 2,
   'no-debugger': 2,
   'no-delete-var': 2,

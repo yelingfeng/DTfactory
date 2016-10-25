@@ -8,14 +8,21 @@
   ],
   "scripts": {
     "dev": "cooking watch",
-    "dist": "cooking build -p",
+    "dist": "rimraf dist && cooking build -p",
     "deploy": "cooking build --no-color"
   },
   "author": "yelingfeng",
   "license": "ISC",
   "dependencies": {
+    "element-ui": "^1.0.0-rc.7",
+    "lodash": "^4.16.4",
     "vue": "^2.0.3",
     "vue-resource": "^1.0.3",
     "vuex": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-component": "^0.5.0",
+    "express": "^4.14.0",
+    "mockjs": "^1.0.1-beta3"
   }
 }
