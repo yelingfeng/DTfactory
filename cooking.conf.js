@@ -6,7 +6,7 @@ const vendorPlugin = Object.keys(pkg.dependencies);
 
 var config = {
   entry: {
-    app: './src/main.js',
+    app: './src/app.js',
     vendor: vendorPlugin,
     plist: './src/plist.js'
   },

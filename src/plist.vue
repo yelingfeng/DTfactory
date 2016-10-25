@@ -2,7 +2,7 @@
     <div class="container">
         <div class="header">
                 <el-row >
-                    <el-col :span="12" :offset="1">
+                    <el-col :span="24" :offset="1">
                         <el-form :inline="true" :model="plistForm"  class="demo-form-inline">
                             <el-form-item>
                                 <el-input v-model="plistForm.name" placeholder="产品名称"></el-input>
@@ -22,9 +22,9 @@
         </div>
         <el-row>
             <div class="toolbar">
-                <i class="el-icon-edit"></i>
-                <i class="el-icon-share"></i>
-                <i class="el-icon-delete"></i>
+                <el-button type="primary" icon="edit"></el-button>
+                <el-button type="primary" icon="share"></el-button>
+                <el-button type="primary" icon="delete"></el-button>
             </div>
             <el-col :span="24">
                 <ptable></ptable>
@@ -33,7 +33,7 @@
     </div>
 </template>
 <script>
-import ptable from "./pages/plistTable"
+import ptable from "./views/plistTable"
 export default {
   data() {
       return {
@@ -69,17 +69,8 @@ body {
 }
 
 .toolbar {
-
     height : 30px;
-
-    & i {
-        color: #8492a6;
-        margin: 0 20px;
-        font-size: 1.5em;
-        vertical-align: middle;
-        cursor: pointer;
-    }
-
+    margin:10px;
 }
 
 </style>

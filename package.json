@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "cooking watch",
     "dist": "rimraf dist && cooking build -p",
-    "deploy": "cooking build --no-color"
+    "deploy": "cooking build --no-color",
+    "server" : "node server.js"
   },
   "author": "yelingfeng",
   "license": "ISC",
