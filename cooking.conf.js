@@ -52,7 +52,8 @@ var config = {
 if (process.env.NODE_ENV === 'production') {
   cooking.add('output.filename', 'js/[hash:8].[name].js') ;
   cooking.add('plugin.CommonsChunk', new webpack.optimize.CommonsChunkPlugin({
-    names: ['common', 'vendor']
+      names: ['common', 'vendor'],
+      minChunks: Infinity
   }));
 }
 

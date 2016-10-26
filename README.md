@@ -2,27 +2,100 @@
 > Digital factory
 
 
-# 初始化工程
-```shell
-   
-   npm install -g cooking 
-   
-   npm install 
-   
-```
-## 1. 技术栈
 
-- vue2
-- vuex2
-- vue-resource
-- echarts 
-- jquery
-- lodash
-- elementUI
-- postcss-salad
+## 技术栈
+
+相关资料
+
+- [x] [vue2](https://vuefe.cn/guide/)
+- [x] [vuex2](https://vuefe.cn/vuex/)
+- [x] [vue-resource](https://github.com/vuejs/vue-resource)
+- [x] [echarts](https://github.com/ecomfe/echarts)
+- [x] [lodash](https://lodash.com/)
+- [x] [ElementUI](http://element.eleme.io/)
+- [x] [postcss-salad](http://elemefe.github.io/postcss-salad/index.html)
+- [x] [cooking](http://cookingjs.github.io/zh-cn/index.html)
+- [x] jquery
     
-## 2. ESlint 代码风格
 
+
+# CSS 规范
+
+ 组件采用BEM规范
+ [BEM CSS命名规范](http://www.jianshu.com/p/407bd68a5677)
+ [SALAD-BEM语法](https://www.npmjs.com/package/saladcss-bem)
+
+
+```css
+@b nav { /* b is for block */
+    @e item { /* e is for element */
+        display: inline-block;
+    }
+    @m placement_header {
+        background-color: red;
+    }
+}
+```
+
+生成
+```css
+.nav {}
+.nav__item {
+    display: inline-block
+}
+.nav_placement_header {
+    background-color: red
+}
+
+```
+
+实例代码
+```css
+@component-namespace df {
+
+    @b screen {
+        width:1000px;
+        height : 600px;
+        border: 1px solid #ccc;
+        margin: 10px auto ;
+        padding:5px;
+
+        @e element{
+            padding: 10px;
+            
+            
+            @m hover{
+              
+            }
+        }
+    }
+}
+```
+
+`@component-namespace df`表示组件命名头 df-
+`@b` 表示模块  df-screen
+`@e` 表示元素  df-screen__element
+
+如果需要状态修饰 `modifier` 可采取缩写`@m`
+
+### 规范
+ 
+ 1 采用BEM CSS命名规范 
+ 2 嵌套层数不能超过规范的3级 最多到`modifier` B__E--M 不可以B__E__E--M这种
+ 3 通用css放到common文件夹 全局定义变量在`var.css` 各个模块css 引入`var.css`
+ > 全局变量定义 使用时var(--link-color)这样
+```css
+    :root{
+        --color-primary: #20a0ff;
+        --link-color: #475669;
+        --link-hover-color: var(--color-primary);
+    }
+```
+
+
+
+## ESlint 代码风格
+ 
 具体ESlint规则查看 [eslint中文规则](http://eslint.cn/docs/rules/)
 
 具体配置 [elemefe lint规则](https://github.com/ElemeFE/eslint-config-elemefe/blob/master/rules.js)
@@ -217,17 +290,64 @@
 
 ```
 
+# 开发构建工具 Cooking
+
+文档地址[cooking](http://cookingjs.github.io/zh-cn/index.html)
+
+cooking 是一个基于 webpack 但是提供更简单的配置项，同时内置了许多常用配置的构建工具。同时搭配
+
+命令行工具可以将常用开发环境的依赖 (devDependencies) 安装全局，并且提供的脚手架功能能快速搭建
+
+基于 Vue 或 React 的项目。
+
+安装全局环境即可
+```nodejs
+   
+   npm install -g cooking 
+   
+```
+
+# Element 
+
+Element UI 是一套 Vue.js 后台组件库，它能够帮助你更轻松更快速地开发后台项目。
+
+基于vue2的UI库 
+
+[文档地址](http://element.eleme.io/#/component/quickstart)
 
 
-# Development
+简单例子
+```javascript
 
-```shell
-   npm run dev
+    <el-button type="primary" @click.native="changeTestNum">button</el-button> 
+
 ```
 
 
 
-# Production
+# 初始化工程
+```shell
+   
+   npm install -g cooking 
+   
+   npm install 
+   
+```
+# 开发 Development
+
+```shell
+
+   // 先启动本地api服务器
+   npm run  server
+   
+   // 启动cooking
+   npm run dev
+   
+```
+
+
+
+# 生成模式 Production
 ```
   npm run  dist
 ```

@@ -1,17 +1,18 @@
 <template>
     <div class="df-screen">
-        <el-button :plain="true" @click.native="open5">消息</el-button>
-        <el-button :plain="true" @click.native="open6">成功</el-button>
-        <el-button :plain="true" @click.native="open7">警告</el-button>
-        <el-button :plain="true" @click.native="open8">错误</el-button>
+        <div class="df-screen__element df-screen__element--hover">
+            <el-button :plain="true" @click.native="open5">消息</el-button>
+            <el-button :plain="true" @click.native="open6">成功</el-button>
+            <el-button :plain="true" @click.native="open7">警告</el-button>
+            <el-button :plain="true" @click.native="open8">错误</el-button>
 
-        <el-card class="box-card">
-            <div v-for="comp in componentsArr" class="text item">
-                {{comp.code}}
-            </div>
-        </el-card>
+            <el-card class="box-card">
+                <div v-for="comp in componentsArr" class="text item">
+                    {{comp.code}}
+                </div>
+            </el-card>
 
-        <br/>
+        </div>
         <p>{{testNum}}</p>
         <el-button type="primary" @click.native="changeTestNum">测试vuex</el-button>
     </div>
