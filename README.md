@@ -16,8 +16,15 @@
 - [x] [postcss-salad](http://elemefe.github.io/postcss-salad/index.html)
 - [x] [cooking](http://cookingjs.github.io/zh-cn/index.html)
 - [x] jquery
-    
 
+    
+# vue 
+
+ 直接看教程[vue-tutorial](https://github.com/MeCKodo/vue-tutorial)
+
+# vuex 
+
+ 直接看教程[vuex-tutorial](https://github.com/yelingfeng/vuex-tutorial)
 
 # CSS 规范
 
