@@ -19,7 +19,7 @@
 
     
 # vue 
-
+  
  直接看教程[vue-tutorial](https://github.com/MeCKodo/vue-tutorial)
 
 # vuex 
@@ -80,16 +80,18 @@
 ```
 
 `@component-namespace df`表示组件命名头 df-
+
 `@b` 表示模块  df-screen
+
 `@e` 表示元素  df-screen__element
 
 如果需要状态修饰 `modifier` 可采取缩写`@m`
 
 ### 规范
  
- 1 采用BEM CSS命名规范 
- 2 嵌套层数不能超过规范的3级 最多到`modifier` B__E--M 不可以B__E__E--M这种
- 3 通用css放到common文件夹 全局定义变量在`var.css` 各个模块css 引入`var.css`
+* 1 采用BEM CSS命名规范 
+* 2 嵌套层数不能超过规范的3级 最多到`modifier` B__E--M 不可以B__E__E--M这种
+* 3 通用css放到common文件夹 全局定义变量在`var.css` 各个模块css 引入`var.css`
  > 全局变量定义 使用时var(--link-color)这样
 ```css
     :root{
@@ -299,7 +301,7 @@
 
 # 开发构建工具 Cooking
 
-文档地址[cooking](http://cookingjs.github.io/zh-cn/index.html)
+[cooking文档地址](http://cookingjs.github.io/zh-cn/index.html)
 
 cooking 是一个基于 webpack 但是提供更简单的配置项，同时内置了许多常用配置的构建工具。同时搭配
 
