@@ -15,10 +15,14 @@
         </div>
         <p>{{testNum}}</p>
         <el-button type="primary" @click.native="changeTestNum">测试vuex</el-button>
+        <p>
+            <color ></color>
+        </p>
     </div>
 </template>
 <script>
 import {mapActions ,mapGetters} from "vuex"
+import color from "components/common/colorpicker/index.vue"
 export default{
   name:"screen",
   data(){
@@ -40,6 +44,9 @@ export default{
        getScreenData: 'loadModules',
        testAction : 'testAction'
     }),
+     onChange (val) {
+      console.log(val)
+    },
     open5() {
         this.$message({
             showClose: true,
@@ -73,6 +80,9 @@ export default{
     changeTestNum(){
         this.testAction(1);
     }
+  },
+  components:{
+      color
   }
 }
 </script>

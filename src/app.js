@@ -10,4 +10,5 @@ const app = new Vue({ // eslint-disable-line
   render: h => h(App)
 });
 
+
 app.$mount('#app')

@@ -13,7 +13,8 @@ var config = {
   dist: './dist',
   devServer: {
     port: 8100,
-    publicPath: '/'
+    publicPath: '/',
+    clean: false
   },
   // production
   clean: true,
@@ -24,6 +25,9 @@ var config = {
     'components': path.join(__dirname, './src/components'),
     'views': path.join(__dirname, './src/views')
   },
+  // externals:{
+  //   jquery: 'jquery'
+  // },
   publicPath: '/dist/',
   assetsPath: 'images',
   urlLoaderLimit: 10000,
@@ -78,6 +82,7 @@ if (process.env.NODE_ENV === 'production') {
     chunks: ['vendor', 'plist']
   }]
 }
+
 
 cooking.set(config);
 
