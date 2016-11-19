@@ -3,7 +3,7 @@
  */
 import Element from "./element"
 import Component from "vue-class-component"
-import {defaultOtion, getVueComponent} from "./componentStrategy"
+import {defaultOtion, getVueComponent,getDefaultData} from "./componentStrategy"
 import RC from "util/ResourcesConfig"
 import $ from "jquery"
 import zIndexHelper from "./zIndexCommon"
@@ -24,34 +24,37 @@ import {mapActions ,mapGetters} from "vuex"
     Chart, Tables
   }
 })
-export default class box extends Element {
+export default class ZBox extends Element {
   data() {
-    var compName = getVueComponent(this.options.content.type)
+    let compName = getVueComponent(this.options.content.type)
     return {
       compName:compName,
-      isRunTime: true
+      isRunTime: true,
+      renderData:[]
     }
   }
 
+  // 初始化工作
   created(){
     this.$store.dispatch('syncComponentOption',{zid:this.options.zid})
+    this.$store.dispatch('setComponentCache',this)
+
   }
 
   mounted() {
 
     let zid = this.options.zid;
-    console.log(this.$refs)
-    // 设置zindex
+    //console.log(this.$refs)
     zIndexHelper.put($("#"+zid),this.options.levelIndex)
 
     //this.initScreenSize();
-
+    this.renderData = getDefaultData(this.options.content.type,this.options.content.chartType,this.options.content.childType);
   }
 
   render(h){
     let compBox
     if(this.compName == "Chart"){
-      compBox =  <Chart ref='comp'></Chart>
+      compBox =  <Chart ref='comp' options={this.options} renderData={this.renderData}></Chart>
     }
     return(
         <Element options={this.options} on-handlerC={this.clickHandler} on-contentMenu={this.contentMenuHandler}>

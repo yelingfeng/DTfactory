@@ -5,6 +5,15 @@ import {initSelectModules , initGetDBList ,initGetDBTree,excuteSql} from "../../
 import * as types from '../mutation-types'
 import _ from "lodash"
 
+/**
+ * 设置组件全局缓存
+ * @param commit
+ * @param payload
+ */
+export const setComponentCache = ({commit} , payload) =>{
+  commit(types.SYNC_COMP_CACHE,payload)
+}
+
 export const syncComponentOption = ({commit},option) => {
   commit(types.SYNC_COMP_OPTION,option);
 };

@@ -1,4 +1,5 @@
-
+// 设置组件全局缓存对象
+export const SYNC_COMP_CACHE = "SYNC_COMP_CACHE"
 // 初始化加载模块
 export const INIT_GLOBAL_DATA = "INIT_GLOBAL_DATA";
 

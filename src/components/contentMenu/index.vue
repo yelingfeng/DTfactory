@@ -1,5 +1,5 @@
 <template>
-    <div class="df-smartMenu" v-show="isShow" :style="{left:offsetX+'px',top:offsetY+'px'}">
+    <div class="df-smartMenu" v-show="isShow" :style="{left:offsetX+'px',top:offsetY+'px'}"  >
         <div class="df-smartMenu__body">
             <ul class="df-smartMenu__ul">
                 <li v-for="item in itemsLi" class="df-smartMenu__li" @click.stop="firstMenu(item.type)">

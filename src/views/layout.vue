@@ -9,7 +9,7 @@
         <zTitleSet></zTitleSet>
         <propMenu></propMenu>
         <contentMenu></contentMenu>
-        <box v-for="comp in comps" :options="comp"  ></box>
+        <ZBox v-for="comp in comps" :options="comp"  ></ZBox>
     </div>
 </template>
 
@@ -25,7 +25,7 @@ import choiceChart from "views/choiceChart";
 import urlSetting from "views/urlSetting";
 import propMenu from "views/properties";
 import saveMenu from "views/save"
-import box from "components/common/box"
+import ZBox from "components/common/box"
 export default{
     name : "layout",
     data(){
@@ -92,7 +92,7 @@ export default{
         })
     },
     components:{
-        box,
+        ZBox,
         zDset,
         zCascade,
         zTitleSet,

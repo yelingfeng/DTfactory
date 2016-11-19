@@ -8,6 +8,7 @@ import {
   HIDE_CONTEXT_MENU,
   SHOW_URL_DIALOG,
   HIDE_URL_DIALOG,
+  SYNC_COMP_CACHE,
   SYNC_PAGE_XY,
   SYNC_CUR_ZID,
   SYNC_URLSETTING_OP,
@@ -22,6 +23,7 @@ import {
 
 
 const state  = {
+  Z:{},
   globalData : {},
   loadedCompNum :0,
   isShowContextMenu:false,
@@ -97,7 +99,7 @@ const mutations = {
     state.allOp = treeObj.all;
     //setChildConfig(data.components)
 
-    buildPanelConfig(data.components)
+    //buildPanelConfig(data.components)
 
   },
 
@@ -113,6 +115,19 @@ const mutations = {
       }
     })
   },
+
+  /**
+   * 缓存全局组件对象关系
+   * @param state
+   * @param compObj
+   */
+  [SYNC_COMP_CACHE](state,compObj){
+
+      if(!state.Z[compObj.zid]){
+         state.Z[compObj.zid] = compObj;
+      }
+  },
+
 
   [SHOW_CONTEXT_MENU](state){
      state.isShowContextMenu = true

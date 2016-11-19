@@ -169,6 +169,25 @@ const getVueComponentName = {
 
 
 
+const handerDefaultData = {
+  [CompType.CHART](chartType,childType){
+     return MorkData(CompType.CHART, chartType, childType)
+  },
+  [CompType.TABLE](type,childType){
+    return {};
+  },
+  [CompType.TEXT](type,childType){
+    return {};
+  },
+  [CompType.SEARCH](type,childType){
+    return {};
+  },
+  [CompType.OTHER](type,childType){
+    return {};
+  }
+}
+
+
 export function getName(type){
   return getNameRule[type]();
 }
@@ -179,6 +198,16 @@ export function defaultOtion(type, option){
 
 export function getVueComponent(type){
   return getVueComponentName[type]();
+}
+
+/**
+ * 获取默认数据
+ * @param compType 组件类型
+ * @param type 一级类型
+ * @param secondType 二级类型
+ */
+export function getDefaultData(compType,type,secondType){
+  return handerDefaultData[compType](type,secondType);
 }
 
 

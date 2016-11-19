@@ -25,7 +25,8 @@ var config = {
     'src': path.join(__dirname, './src'),
     'components': path.join(__dirname, './src/components'),
     'views': path.join(__dirname, './src/views'),
-    'util':path.join(__dirname,'./src/util')
+    'util':path.join(__dirname,'./src/util'),
+    'charts':path.join(__dirname,'./src/dfcharts')
   },
   publicPath: '/dist/',
   assetsPath: 'static',
