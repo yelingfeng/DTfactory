@@ -1,0 +1,26 @@
+@charset "UTF-8";
+@import "./common/var.css";
+@component-namespace df {
+    @b url{
+
+        @e body{
+            padding:0 30px;
+        }
+        @e rowStyle{
+            margin:5px 0;
+            line-height:36px;
+        }
+        @e parameterDiv{
+            background-color: rgb(245,245,245);
+            padding:10px;
+            height: 250px;
+            overflow: auto;
+        }
+        @e iconStyle{
+            cursor: pointer;
+            color:#20A0FF;
+        }
+    }
+
+
+}

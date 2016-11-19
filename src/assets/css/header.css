@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@import "./common/var.css";
+@component-namespace df {
+
+    @b header {
+        height: 55px;
+        background-color: #434343;
+        width: 100%;
+        position: fixed;
+        top:0;
+        left:0;
+        z-index: 10000;
+        line-height:55px;
+        @e tooltip{
+            height: 30px;
+            position: fixed;
+            top:55px;
+            left:0;
+            z-index: 10000;
+            line-height:30px;
+            background-color: rgb(204, 204, 204);
+            width: 100%;
+        }
+
+        @e title{
+            font-size: 24px;
+            color:#fff;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        @e icon{
+            font-size: 14px;
+            color:#fff;
+            float: left;
+            padding:0 10px;
+            cursor: pointer;
+        }
+
+        @e control{
+            font-size: 14px;
+            float: left;
+            padding:0 10px;
+            cursor: pointer;
+        }
+
+        @e propSetting{
+            cursor: pointer;
+        }
+    }
+
+
+}

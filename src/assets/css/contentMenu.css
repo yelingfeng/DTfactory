@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import "./common/var.css";
+
+@component-namespace df {
+    @b contentMenu {
+        display: block;
+        width: 150px;
+        position: absolute;
+        z-index: 201711;
+
+        @e body {
+            padding: 1px;
+            border: 1px solid #B8CBCB;
+            background-color: #fff;
+            box-shadow: 2px 2px 5px #666;
+        }
+
+        @e ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        @e li {
+            position: relative;
+        }
+
+        @e li_separate {
+            line-height: 0;
+            margin: 3px;
+            border-bottom: 1px solid #B8CBCB;
+            font-size: 0;
+        }
+
+        @e triangle {
+            position: absolute;
+            overflow: hidden;
+            triangle : 5px right #666;
+        }
+
+        @e a {
+            display:block;
+            height:25px;
+            line-height:24px;
+            padding:0 5px 0 25px;
+            color:#000;
+            font-size:12px;
+            text-decoration:none;
+            overflow:hidden;
+            &:hover {
+              background-color: #348CCC;
+              color: #fff;
+              text-decoration: none;
+            }
+        }
+
+    }
+
+}
