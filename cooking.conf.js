@@ -13,6 +13,7 @@ var config = {
   dist: './dist',
   devServer: {
     port: 8100,
+    hot: true,
     publicPath: '/',
     clean: false
   },
@@ -23,13 +24,11 @@ var config = {
   alias: {
     'src': path.join(__dirname, './src'),
     'components': path.join(__dirname, './src/components'),
-    'views': path.join(__dirname, './src/views')
+    'views': path.join(__dirname, './src/views'),
+    'util':path.join(__dirname,'./src/util')
   },
-  // externals:{
-  //   jquery: 'jquery'
-  // },
   publicPath: '/dist/',
-  assetsPath: 'images',
+  assetsPath: 'static',
   urlLoaderLimit: 10000,
   extractCSS: 'css/[hash:8].[name].css', // 提取 CSS 文件
   extends: ['vue2', 'saladcss'],
@@ -56,28 +55,28 @@ var config = {
 if (process.env.NODE_ENV === 'production') {
   cooking.add('output.filename', 'js/[hash:8].[name].js') ;
   cooking.add('plugin.CommonsChunk', new webpack.optimize.CommonsChunkPlugin({
-      names: ['common', 'vendor'],
-      minChunks: Infinity
+    names: ['common', 'vendor'],
+    minChunks: Infinity
   }));
 }
 
 if (process.env.NODE_ENV === 'production') {
   config.template = [{
-    filename: 'index.html',
+    filename: 'editor.html',
     template: 'src/template/index.html',
     chunks: ['common', 'vendor', 'app']
   }, {
-    filename: 'plist.html',
+    filename: 'index.html',
     template: 'src/template/plist.html',
     chunks: ['common', 'vendor', 'plist']
   }]
 } else {
   config.template = [{
-    filename: 'index.html',
+    filename: 'editor.html',
     template: 'src/template/index.html',
     chunks: ['vendor', 'app']
   }, {
-    filename: 'plist.html',
+    filename: 'index.html',
     template: 'src/template/plist.html',
     chunks: ['vendor', 'plist']
   }]

@@ -6,7 +6,8 @@ import Vuex from 'vuex';
 import createLogger from 'vuex/dist/logger.js';
 import * as actions from './actions'
 import * as getters from './getters'
-import screen from './modules/screen'
+import dataset from "./modules/dataset"
+import layout from "./modules/layout"
 Vue.use(Vuex) ;
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -17,7 +18,8 @@ const store = new Vuex.Store({
   actions,
   getters,
   modules: {
-    screen
+    layout,
+    dataset
   }
 });
 

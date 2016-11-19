@@ -1,18 +1,16 @@
 <template>
-  <div>
-     <control></control>
-     <screen></screen>
-     <props></props>
+  <div class="workspace" >
+      <topheader></topheader>
+      <layout></layout>
   </div>
 </template>
 <script>
-import screen from './views/screen';
-import control from "./views/controls";
+import layout from './views/layout';
 import props from "./views/properties";
-
+import topheader from "./views/header";
 export default {
   components: {
-      screen,control,props
+      layout,props,topheader
   }
 };
 </script>
